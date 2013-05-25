@@ -1,0 +1,13 @@
+{% extends "base.dtl" %}
+
+{% block title %}Colosimo: Protected Page with query string{% endblock %}
+
+{% block content %}
+  <h1>Protected Area</h1>
+  <p>Received query string values:</p>
+  <ul>
+    <li>a={{ a }}</li>
+    <li>b={{ b }}</li>
+    <li>c={{ c }}</li>
+  </ul>
+{% endblock %}

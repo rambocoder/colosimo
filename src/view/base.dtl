@@ -20,6 +20,8 @@
         {% if _before.current_user %}
           <li><a href="/user/logout">Logout</a></li>
         {% endif %}
+          <li><a href="/protected">Protected Page</a></li>
+          <li><a href="/protected/do?a=ValueA&b=ValueForB&c=Cvalue">Test return url</a></li>
       </ul>
     </nav>
     {% block content %}{% endblock %}

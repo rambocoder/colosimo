@@ -18,7 +18,8 @@ require_login(Req) ->
 check_password_and_login(Req, ColosimoUser) ->
   case ColosimoUser:check_password(Req:post_param("password")) of
     true ->
-      {redirect, proplists:get_value("redirect", Req:post_params(), "/"), ColosimoUser:set_login_cookies()};
+      RedirectUrl = Req:query_param("returlUrl", "/"),
+      {redirect, RedirectUrl, ColosimoUser:set_login_cookies()};
     false ->
       {ok, [{error, "Authentication error: password check failed"}]}
   end.

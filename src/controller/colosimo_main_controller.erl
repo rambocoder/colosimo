@@ -3,7 +3,7 @@
 
 before_(ActionName) ->
   {ok, User} = user_lib:require_login(Req),
-  % error_logger:info_msg("Found user: ~p~n",[User]),
+  error_logger:info_msg("Found user: ~p~n",[User]),
   {ok, [{current_user, User}]}.
 
 index('GET', []) ->

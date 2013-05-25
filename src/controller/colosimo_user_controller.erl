@@ -23,8 +23,10 @@ register('POST', []) ->
     [ColosimoUser] ->
       {ok, [{error, "Email already taken"}]};
     [] ->
-      SavedUser = user_lib:register_user(Req),
-      {redirect, "/user/login", []}
+      case user_lib:register_user(Req) of
+		{ok, SavedUser} ->   {redirect, "/user/login", [] }; 
+        {error, ErrorList} -> {ok, [{error, ErrorList}]}
+      end
   end.
 
 logout('GET', []) ->

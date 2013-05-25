@@ -1,0 +1,10 @@
+{% extends "base.dtl" %}
+
+{% block title %}Colosimo: Protected Area{% endblock %}
+
+{% block content %}
+  <h1>Protected Area</h1>
+  <p>You are logged in as: {{ _before.current_user.username }}.</p>
+  
+  <p>You should <a href="/user/register">register</a>, it will be fun.</p>
+{% endblock %}
